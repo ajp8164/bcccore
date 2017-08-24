@@ -3,5 +3,5 @@
 var bcccore = require('bcccore-node/lib/cli/bcccore');
 var path = require('path');
 var servicesPath = path.resolve(__dirname, '../');
-var additionalServices = ['explorer-api', 'explorer-ui'];
+var additionalServices = ['explorer-api', 'ows-explorer'];
 bcccore(servicesPath, additionalServices);

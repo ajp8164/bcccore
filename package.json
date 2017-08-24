@@ -84,8 +84,8 @@
   "dependencies": {
     "bcccore-lib": "https://github.com/owstack/bcccore-lib.git",
     "bcccore-node": "https://github.com/owstack/bcccore-node.git",
-    "explorer-api": "https://github.com/owstack/bcccore-explorer-api.git",
-    "explorer-ui": "https://github.com/owstack/ows-explorer.git"
+    "bcccore-explorer-api": "https://github.com/owstack/bcccore-explorer-api.git",
+    "ows-explorer": "https://github.com/owstack/ows-explorer.git"
   },
   "license": "MIT",
   "devDependencies": {
