@@ -36,8 +36,8 @@ transaction.sign(privateKey);
 ## Applications
 
 - [Node](https://github.com/owstack/bcccore-node) - A full node with extended capabilities using Bitcoin Core
-- [Explorer API](https://github.com/owstack/explorer-api) - A blockchain explorer HTTP API
-- [OWS Explorer](https://github.com/owstack/explorer) - A blockchain explorer web user interface
+- [Explorer API](https://github.com/owstack/bcccore-explorer-api) - A blockchain explorer HTTP API
+- [OWS Explorer](https://github.com/owstack/ows-explorer) - A blockchain explorer web user interface
 - [Wallet Service](https://github.com/owstack/bcccore-wallet-service) - A multisig HD service for wallets
 - [Wallet Client](https://github.com/owstack/bcccore-wallet-client) - A client for the wallet service
 - [CLI Wallet](https://github.com/owstack/bcccore-wallet) - A command-line based wallet client
