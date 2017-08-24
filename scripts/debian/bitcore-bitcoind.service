@@ -1,0 +1,20 @@
+[Unit]
+Description=Bitcoin Core for Bcccore
+Requires=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/opt/bcccore
+ExecStart=/usr/bin/bcccore-bitcoind -datadir=/home/bcccore/.bcccore/data/
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=15
+User=bcccore
+ExecStartPre=/bin/mkdir -p /run/bcccore
+ExecStartPre=/bin/chown bcccore:bcccore /run/bcccore
+ExecStartPre=/bin/chmod 755 /run/bcccore
+PermissionsStartOnly=true
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

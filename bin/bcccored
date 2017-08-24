@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var path = require('path');
+var bcccored = require('bcccore-node/lib/cli/bcccored');
+var servicesPath = path.resolve(__dirname, '../');
+var additionalServices = ['explorer-api', 'explorer-ui'];
+bcccored(servicesPath, additionalServices);

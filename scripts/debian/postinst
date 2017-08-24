@@ -1,0 +1,37 @@
+#!/bin/bash
+set -e
+set -o pipefail
+
+# add group
+if ! getent group | grep -q "^bcccore:" ; then
+    echo "Creating system group: bcccore"
+    groupadd --system bcccore
+fi
+
+# add user
+if ! getent passwd | grep -q "^bcccore:"; then
+    echo "Creating bcccore system user"
+    useradd --gid "bcccore" --system -m bcccore
+fi
+
+# build nodejs addons
+cd "/usr/opt/bcccore"
+SKIP_BITCOIN_DOWNLOAD=1 npm rebuild
+
+# setup data directory
+mkdir -p "/home/bcccore/.bcccore/data"
+chown -R bcccore:bcccore "/home/bcccore/.bcccore"
+
+# start bcccore
+if hash service 2> /dev/null; then
+    service bcccore start || echo "bcccore could not be registered or started"
+elif hash start 2> /dev/null; then
+    start bcccore || echo "bcccore could not be registered or started"
+elif hash systemctl 2> /dev/null; then
+    {
+        systemctl enable "bcccore.service" && \
+            systemctl start "bcccore.service"
+    } || echo "bcccore could not be registered or started"
+else
+    echo 'Your system does not appear to use upstart or systemd, so bcccore could not be started'
+fi

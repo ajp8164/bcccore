@@ -1,0 +1,20 @@
+[Unit]
+Description={{ deb_package_description }}
+Requires=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/opt/bcccore
+ExecStart=/usr/opt/bcccore/bin/bcccored
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=15
+User=bcccore
+ExecStartPre=/bin/mkdir -p /run/bcccore
+ExecStartPre=/bin/chown bcccore:bcccore /run/bcccore
+ExecStartPre=/bin/chmod 755 /run/bcccore
+PermissionsStartOnly=true
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target
