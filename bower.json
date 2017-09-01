@@ -1,8 +1,8 @@
 {
   "name": "bcccore",
   "main": "./bcccore.min.js",
-  "version": "0.13.5",
-  "homepage": "http://bcccore.io",
+  "version": "0.0.1",
+  "homepage": "http://openwalletstack.com",
   "authors": [
     "Open Wallet Stack"
   ],
