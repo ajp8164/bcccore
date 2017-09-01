@@ -1,6 +1,6 @@
 {
   "name": "bcccore",
-  "version": "4.1.1",
+  "version": "0.0.1",
   "description": "A platform to build bitcoin and blockchain-based applications.",
   "author": "Open Wallet Stack",
   "main": "index.js",
