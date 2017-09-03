@@ -2,7 +2,7 @@
   "name": "bcccore",
   "main": "./bcccore.min.js",
   "version": "0.0.1",
-  "homepage": "http://openwalletstack.com",
+  "homepage": "https://github.com/owstack/bcccore",
   "description": "A open platform to build bitcoin cash and blockchain-based applications.",
   "moduleType": [
     "globals"
